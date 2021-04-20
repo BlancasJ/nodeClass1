@@ -22,15 +22,6 @@ const isFileOrDir = (fileName) => {
   .then((stats) => stats);
 };
 
-// function to show the data inside a specific folder
-const printFiles = (path, fileNames) => {
-  fileNames.map(async (file) => {
-    const stats = await isFileOrDir(`${path}/${file}`);
-    if(stats.isDirectory()) console.log(`${file}/`);
-    if(stats.isFile()) console.log(file);
-  });
-};
-
 // function to remove an empty directory
 const removeDirectory = (path) => {
   return fs.promises.rmdir(path)

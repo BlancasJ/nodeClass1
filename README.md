@@ -6,7 +6,7 @@ Use homework 1 and homework 2 on this folder or whatever folder you want, just r
 This shows files/folders inside a given path. If you do not provide a folder, it will show what is in the current folder
 \
 example: node directoryInspector.js /path/to/your-folder
-\
+
 ## Homework 2: directoryRemover
 This deletes all files/folders inside a given path.
 \

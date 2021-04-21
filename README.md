@@ -3,22 +3,40 @@
 ## folder
 Use homework 1 and homework 2 on this folder or whatever folder you want, just remember homework 2 would delete the folder.
 ## Homework 1: directoryInspector
-this shows files/folders inside a given path.
-
+This shows files/folders inside a given path. If you do not provide a folder, it will show what is in the current folder
+\
+example: node directoryInspector.js /path/to/your-folder
+\
 ## Homework 2: directoryRemover
-this deletes all files/folders inside a given path.
-
+This deletes all files/folders inside a given path.
+\
+example: node directoryRemover.js /path/to/your-folder
+\
+Be extremely careful!!!
 ## Homework 3: httpServer, public and src
 
-'/': only get method to show the home page.
+'/': the only method available is GET.
+\
+GET shows the home page. 
 \
 \
-'/books': get, post and delete method to edit a txt file called example
+'/books': the only methods availables are GET, POST, DELETE.
+\
+GET shows the info of example.txt
+\
+POST adds info to example.txt
+\
+DELETE cleans example.txt
 \
 \
-'/file-viewer': shows the content from a specific file located at public/consult/
+'/file-viewer': the only method available is GET.
+\
+GET shows the content from a specific file located at public/consult/
 \
 example to make a consult: http://localhost:8088/file-viewer/?name=welcome.txt
 \
 \
-'/server-status': shows the info os the server
+'/server-status': the only method available is GET.
+\
+GET shows the info of the server
+

@@ -1,6 +1,13 @@
 const fs = require('fs');
 const os = require('os');
 
+// function to check if the path exists and if node has permission
+const checkPath = (path) => {
+  return fs.promises.access(path, fs.constants.R_OK)
+  .catch((err) => {throw err})
+  .then((data) => data=true);
+};
+
 // function to read file content
 const readFile = (path, codi) => {
   return fs.promises.readFile(path, codi)
@@ -9,15 +16,15 @@ const readFile = (path, codi) => {
 };
 
 // function to append data into a file
-const appendFile = (path, data) => {
-  return fs.promises.appendFile(path, data)
+const appendFile = (path, data, codi) => {
+  return fs.promises.appendFile(path, data, codi)
   .catch((err) => {throw err})
   .then((data) => data=true);
 };
 
 // function to overwrite new data
-const writeFile = (path, data) => {
-  return fs.promises.writeFile(path, data)
+const writeFile = (path, data, codi) => {
+  return fs.promises.writeFile(path, data, codi)
   .catch((err) => {throw err})
   .then((data) => data=true);
 };
@@ -47,4 +54,5 @@ module.exports = {
   appendFile,
   writeFile,
   serverStatus,
+  checkPath,
 }

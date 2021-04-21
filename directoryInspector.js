@@ -1,7 +1,7 @@
 const fs = require('fs');
 
-// function to check if the directory exists and if node has permission
-const checkDirectory = (path) => {
+// function to check if the path exists and if node has permission
+const checkPath = (path) => {
   return fs.promises.access(path, fs.constants.R_OK)
   .catch((err) => {throw err})
   .then((data) => data=true);
@@ -39,7 +39,7 @@ async function main(path){
     
     return;
   }
-  const promiseRes = await checkDirectory(path);
+  const promiseRes = await checkPath(path);
   if(promiseRes){
     const data = await readDirectory(path)
     printFiles(path, data);

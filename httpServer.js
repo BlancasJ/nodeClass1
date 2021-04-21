@@ -5,7 +5,7 @@ const route = (path) => {
   const routes = {
     '/': handler.home,
     '/books': handler.books,
-    '/file-viewer': '',
+    '/file-viewer': handler.fileViewer,
     '/server-status': handler.status,
   }
 
@@ -15,9 +15,16 @@ const route = (path) => {
   return handler.notFound;
 };
 
+function checkURL(url) {
+  let newUrl = url.split('?')[0];
+  if(newUrl.endsWith('/') && newUrl.length > 1) return newUrl.slice(0, -1);
+  return newUrl;
+}
+
 const server = http.createServer( (request, response) => {
-  const { url, method } = request;
-  const myRoute = route(url);
+  const { url } = request;
+  const newURL = checkURL(url);
+  const myRoute = route(newURL);
   return myRoute(request, response);
 });
 

@@ -2,7 +2,7 @@ const fs = require('fs');
 const readline = require('readline');
 
 // function to check if the directory exists and if node has permission
-const checkDirectory = (path) => {
+const checkPath = (path) => {
   return fs.promises.access(path, fs.constants.R_OK)
   .catch((err) => {throw err})
   .then((data) => data=true);
@@ -37,7 +37,7 @@ const removeFile = (path) => {
 };
 
 // function to remove every file/dir in a given path (also the path)
-const removeAll = async (path, bool, files=0, directories=0) => {
+const removeAll = async (path, bool=true, files=0, directories=0) => {
   // read data inside the path
   const data = await readDirectory(path);
   // if data has no length remove the given dir, increase directories variable and return the result
@@ -94,13 +94,11 @@ async function main(path){
   if(path === 'undefined'){
     throw new Error('Directory was not assign');
   }
-  // check if the given path exists, the checkDirectory funtion throws an error if not
-  const directoryExists = await checkDirectory(path);
+  // check if the given path exists, the checkPath funtion throws an error if not
+  const directoryExists = await checkPath(path);
   if(directoryExists){
-    // use in the removeAll function
-    let bool = true;
     // get files and directories removed and show them
-    const [files, directories] = await removeAll(path, bool);
+    const [files, directories] = await removeAll(path);
     console.log(`done. Removed ${directories} directories, ${files} files`);
   }
 }

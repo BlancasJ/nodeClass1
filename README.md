@@ -20,7 +20,7 @@ Be extremely careful!!!
 GET shows the home page. 
 \
 \
-'/books': the only methods availables are GET, POST, DELETE.
+'/books': the only methods available are GET, POST, DELETE.
 \
 GET shows the info of example.txt
 \

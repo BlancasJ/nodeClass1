@@ -96,11 +96,13 @@ async function main(path){
   }
   // check if the given path exists, the checkPath funtion throws an error if not
   const directoryExists = await checkPath(path);
-  if(directoryExists){
-    // get files and directories removed and show them
-    const [files, directories] = await removeAll(path);
-    console.log(`done. Removed ${directories} directories, ${files} files`);
+  if(!directoryExists){
+    throw new Error('Directory does not exists');
   }
+  // get files and directories removed and show them
+  const [files, directories] = await removeAll(path);
+  console.log(`done. Removed ${directories} directories, ${files} files`);
+  return;
 }
 
 try{

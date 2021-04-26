@@ -1,0 +1,29 @@
+{
+  "name": "exercise-node",
+  "version": "1.0.0",
+  "description": "Use homework 1 and homework 2 on this folder or whatever folder you want, just remember homework 2 would delete the folder.\r ## homework 3 is a http server",
+  "main": "httpServer.js",
+  "scripts": {
+    "test": "sh ./src/test/tests.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlancasJ/nodeClass1.git"
+  },
+  "keywords": [
+    "Delete",
+    "folder",
+    "show",
+    "folder",
+    "content",
+    "http",
+    "server"
+  ],
+  "author": "Jorge Blancas Cruz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BlancasJ/nodeClass1/issues"
+  },
+  "homepage": "https://github.com/BlancasJ/nodeClass1#readme",
+  "devDependencies": {}
+}

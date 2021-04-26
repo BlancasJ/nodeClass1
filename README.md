@@ -1,5 +1,9 @@
 ## Node js class
 
+## Quick test
+Run: npm test
+\
+This will execute the three files and the server will be online for 3 minutes, then it will stop.
 ## folder
 Use homework 1 and homework 2 on this folder or whatever folder you want, just remember homework 2 would delete the folder.
 ## Homework 1: directoryInspector

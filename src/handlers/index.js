@@ -67,7 +67,7 @@ const fileViewer = async (request, response) => {
 };
 
 const status = async (request, response) => {
-  response.writeHead(200, { 'Content-Type': 'text/html' });
+  response.writeHead(200, { 'Content-Type': 'application/json' });
   response.write(JSON.stringify(serverStatus));
   response.end();
 };
